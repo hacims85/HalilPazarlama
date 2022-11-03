@@ -35,29 +35,41 @@
             #endregion
 
 
-            d.Home();
-            int selected = System.Convert.ToInt32(System.Console.ReadLine());
-            while (selected != 1 && selected != 2 && selected != 3 && selected != 4)
+            string devammi = "e";
+            while (devammi.ToUpper() == "E")
             {
-                System.Console.WriteLine("Lütfen Geçerli Bir Numara Giriniz");
-                selected = System.Convert.ToInt32(System.Console.ReadLine());
+
+
+                d.Home();
+                int selected = System.Convert.ToInt32(System.Console.ReadLine());
+                while (selected != 1 && selected != 2 && selected != 3 && selected != 4)
+                {
+                    System.Console.WriteLine("Lütfen Geçerli Bir Numara Giriniz");
+                    selected = System.Convert.ToInt32(System.Console.ReadLine());
+                }
+                if (selected == 1)
+                {
+                    d.CamasirSatinAl();
+                }
+                if (selected == 2)
+                {
+                    d.BulasikSatinAl();
+                }
+                if (selected == 3)
+                {
+                    d.BuzdolabiSatinAl();
+                }
+                if (selected == 4)
+                {
+                    d.TumundenSatinAl();
+                }
+                System.Console.WriteLine("Alışverişe Devam Edilsin Mi?");
+                devammi = System.Console.ReadLine();
+                System.Console.Clear();
             }
-            if (selected == 1)
-            {
-                d.CamasirSatinAl();
-            }
-            if (selected == 2)
-            {
-                d.BulasikSatinAl();
-            }
-            if (selected == 3)
-            {
-                d.BuzdolabiListele();
-            }
-            if (selected == 4)
-            {
-                d.Listele();
-            }
+            double toplam = d.GetToplam();
+            System.Console.WriteLine("Bizi Tercih Ettiğiniz İçin Teşekkürler");
+            System.Console.WriteLine("Toplam Alışveriş = " + toplam);
 
 
         }

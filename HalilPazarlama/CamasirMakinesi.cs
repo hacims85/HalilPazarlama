@@ -14,6 +14,7 @@ namespace HalilPazarlama
         public int YikamaKapasitesi;
         public bool Kurutma;
 
+
         public CamasirMakinesi(string marka, string model, double fiyat, int yikamaKapasitesi, bool kurutma)
         {
             Marka = marka;
@@ -21,11 +22,13 @@ namespace HalilPazarlama
             Fiyat = fiyat;
             YikamaKapasitesi = yikamaKapasitesi;
             Kurutma = kurutma;
+
+
         }
 
         public string Yazdir()
         {
-           
+
             return $"Marka={Marka} Model={Model}\nYıkama Kapasitesi={YikamaKapasitesi} Kurutma={Kurutma}\nFiyat={Fiyat}";
         }
     }

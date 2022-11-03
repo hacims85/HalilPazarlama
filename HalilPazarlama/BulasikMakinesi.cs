@@ -13,6 +13,7 @@ namespace HalilPazarlama
         public double Fiyat;
         public int ProgramSayisi;
         public string EnerjiSinifi;
+
         public BulasikMakinesi(string marka, string model, double fiyat, int programSayisi, string enerjiSınıfı)
         {
             Marka = marka;
@@ -20,6 +21,7 @@ namespace HalilPazarlama
             Fiyat = fiyat;
             ProgramSayisi = programSayisi;
             EnerjiSinifi = enerjiSınıfı;
+
         }
 
         public string Yazdir()

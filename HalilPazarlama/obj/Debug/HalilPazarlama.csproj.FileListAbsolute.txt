@@ -13,3 +13,10 @@ C:\Users\PC\source\repos\HalilPazarlama-main\HalilPazarlama\obj\Debug\HalilPazar
 C:\Users\PC\source\repos\HalilPazarlama-main\HalilPazarlama\obj\Debug\HalilPazarlama.csproj.CoreCompileInputs.cache
 C:\Users\PC\source\repos\HalilPazarlama-main\HalilPazarlama\obj\Debug\HalilPazarlama.exe
 C:\Users\PC\source\repos\HalilPazarlama-main\HalilPazarlama\obj\Debug\HalilPazarlama.pdb
+C:\Users\PC\OneDrive\Belgeler\GitHub\HalilPazarlama\HalilPazarlama\bin\Debug\HalilPazarlama.exe.config
+C:\Users\PC\OneDrive\Belgeler\GitHub\HalilPazarlama\HalilPazarlama\bin\Debug\HalilPazarlama.exe
+C:\Users\PC\OneDrive\Belgeler\GitHub\HalilPazarlama\HalilPazarlama\bin\Debug\HalilPazarlama.pdb
+C:\Users\PC\OneDrive\Belgeler\GitHub\HalilPazarlama\HalilPazarlama\obj\Debug\HalilPazarlama.csproj.AssemblyReference.cache
+C:\Users\PC\OneDrive\Belgeler\GitHub\HalilPazarlama\HalilPazarlama\obj\Debug\HalilPazarlama.csproj.CoreCompileInputs.cache
+C:\Users\PC\OneDrive\Belgeler\GitHub\HalilPazarlama\HalilPazarlama\obj\Debug\HalilPazarlama.exe
+C:\Users\PC\OneDrive\Belgeler\GitHub\HalilPazarlama\HalilPazarlama\obj\Debug\HalilPazarlama.pdb
