@@ -51,26 +51,30 @@ namespace HalilPazarlama
         string urunno = "";
         public void Listele()
         {
+
             Console.WriteLine("-*-*-*-Çamaşır Makineleri-*-*-*-");
             for (int i = 0; i < CamasirMakineleri.Length; i++)
             {
-                Console.WriteLine($"---Ürün No=100{i + 1}---");
+                string urunno1 = "100" + Convert.ToString(i + 1);
+                Console.WriteLine($"---Ürün No={urunno1}---");
                 Console.WriteLine((i + 1) + "-)" + CamasirMakineleri[i].Yazdir());
-                Ekle(new Urunno("100"));
+                Ekle(new Urunno(urunno1));
             }
             Console.WriteLine("-*-*-*-Bulaşık Makineleri-*-*-*-");
             for (int i = 0; i < BulasikMakineleri.Length; i++)
             {
-                Console.WriteLine($"---Ürün No=200{i + 1}---");
+                string urunno2 = "200" + Convert.ToString(i + 1);
+                Console.WriteLine($"---Ürün No={urunno2}---");
                 Console.WriteLine((CamasirMakineleri.Length + i + 1) + "-)" + BulasikMakineleri[i].Yazdir());
-                Ekle(new Urunno("200"));
+                Ekle(new Urunno(urunno2));
             }
             Console.WriteLine("-*-*-*-Buz Dolapları-*-*-*-");
             for (int i = 0; i < Buzdolaplari.Length; i++)
             {
-                Console.WriteLine($"---Ürün No=300{i + 1}---");
+                string urunno3 = "300" + Convert.ToString(i + 1);
+                Console.WriteLine($"---Ürün No={urunno3}---");
                 Console.WriteLine((CamasirMakineleri.Length + BulasikMakineleri.Length + i + 1) + "-)" + Buzdolaplari[i].Yazdir());
-                Ekle(new Urunno("300"));
+                Ekle(new Urunno(urunno3));
             }
         }
         public void Home()
@@ -213,6 +217,7 @@ namespace HalilPazarlama
 
         public void TumundenSatinAl()
         {
+            string devammi = "e";
 
             Listele();
             Console.WriteLine("Lütfen Satın Almak İstediğiniz Ürünün Numarasını Giriniz");
@@ -221,81 +226,113 @@ namespace HalilPazarlama
             {
                 urunno = urunnolari[u].Yazdır();
                 char firstCharacter = urunno[0];
+
                 if (firstCharacter == '1')
                 {
-                    for (int i = 0; i < CamasirMakineleri.Length; i++)
+                    if (devammi.ToUpper() == "E")
                     {
-                        if (selected == i + 1)
+
+
+                        for (int i = 0; i < CamasirMakineleri.Length; i++)
                         {
-                            Console.Clear();
-                            Console.WriteLine("Almak İstediğiniz Ürün");
-                            Console.WriteLine(CamasirMakineleri[i].Yazdir());
-                            Console.WriteLine("Onaylıyor Musunuz? E/H");
-                            string onay = Console.ReadLine();
-                            if (onay.ToUpper() == "E")
+                            if (selected == i + 1)
                             {
-                                Console.WriteLine("Alışverişiniz İçin Teşekkür Ederiz");
-                                Console.WriteLine("Ürünün Fiyatı = " + CamasirMakineleri[i].Fiyat + " TL");
-                                toplam = CamasirMakineleri[i].Fiyat + toplam;
-                                Console.WriteLine("Toplam Alışveriş = " + toplam);
+                                Console.Clear();
+
+                                Console.WriteLine($"-*-*-*-{urunnolari[i].Yazdır()}-*-*-*-");
+                                Console.WriteLine("Almak İstediğiniz Ürün");
+                                Console.WriteLine(CamasirMakineleri[i].Yazdir());
+                                Console.WriteLine("Onaylıyor Musunuz? E/H");
+                                string onay = Console.ReadLine();
+                                if (onay.ToUpper() == "E")
+                                {
+                                    Console.WriteLine("Alışverişiniz İçin Teşekkür Ederiz");
+                                    Console.WriteLine("Ürünün Fiyatı = " + CamasirMakineleri[i].Fiyat + " TL");
+                                    toplam = CamasirMakineleri[i].Fiyat + toplam;
+                                    Console.WriteLine("Toplam Alışveriş = " + toplam);
 
 
 
 
+                                }
+                                devammi = "h";
                             }
                         }
                     }
 
                 }
+
+
                 if (firstCharacter == '2')
                 {
-                    for (int i = 0; i < BulasikMakineleri.Length; i++)
+                    if (devammi.ToUpper() == "E")
                     {
-                        if (selected == CamasirMakineleri.Length + i + 1)
+
+
+                        for (int i = 0; i < BulasikMakineleri.Length; i++)
                         {
-                            Console.Clear();
-                            Console.WriteLine("Almak İstediğiniz Ürün");
-                            Console.WriteLine(BulasikMakineleri[i].Yazdir());
-                            Console.WriteLine("Onaylıyor Musunuz? E/H");
-                            string onay = Console.ReadLine();
-                            if (onay.ToUpper() == "E")
+                            if (selected == CamasirMakineleri.Length + i + 1)
                             {
-                                Console.WriteLine("Alışverişiniz İçin Teşekkür Ederiz");
-                                Console.WriteLine("Ürünün Fiyatı = " + BulasikMakineleri[i].Fiyat + " TL");
-                                toplam = BulasikMakineleri[i].Fiyat + toplam;
-                                Console.WriteLine("Toplam Alışveriş = " + toplam);
+                                Console.Clear();
+                                Console.WriteLine($"-*-*-*-{urunnolari[CamasirMakineleri.Length + i].Yazdır()}-*-*-*-");
+                                Console.WriteLine("Almak İstediğiniz Ürün");
+                                Console.WriteLine(BulasikMakineleri[i].Yazdir());
+                                Console.WriteLine("Onaylıyor Musunuz? E/H");
+                                string onay = Console.ReadLine();
+                                if (onay.ToUpper() == "E")
+                                {
+                                    Console.WriteLine("Alışverişiniz İçin Teşekkür Ederiz");
+                                    Console.WriteLine("Ürünün Fiyatı = " + BulasikMakineleri[i].Fiyat + " TL");
+                                    toplam = BulasikMakineleri[i].Fiyat + toplam;
+                                    Console.WriteLine("Toplam Alışveriş = " + toplam);
 
 
 
+                                }
+                                devammi = "h";
                             }
                         }
                     }
+
                 }
+
+
                 if (firstCharacter == '3')
                 {
-                    for (int i = 0; i < Buzdolaplari.Length; i++)
+                    if (devammi.ToUpper() == "E")
                     {
-                        if (selected == CamasirMakineleri.Length + BulasikMakineleri.Length + i + 1)
+
+
+                        for (int i = 0; i < Buzdolaplari.Length; i++)
                         {
-                            Console.Clear();
-                            Console.WriteLine("Almak İstediğiniz Ürün");
-                            Console.WriteLine(Buzdolaplari[i].Yazdir());
-                            Console.WriteLine("Onaylıyor Musunuz? E/H");
-                            string onay = Console.ReadLine();
-                            if (onay.ToUpper() == "E")
+                            if (selected == CamasirMakineleri.Length + BulasikMakineleri.Length + i + 1)
                             {
-                                Console.WriteLine("Alışverişiniz İçin Teşekkür Ederiz");
-                                Console.WriteLine("Ürünün Fiyatı = " + Buzdolaplari[i].Fiyat + " TL");
-                                toplam = Buzdolaplari[i].Fiyat + toplam;
-                                Console.WriteLine("Toplam Alışveriş = " + toplam);
+                                Console.Clear();
+                                Console.WriteLine($"-*-*-*-{urunnolari[CamasirMakineleri.Length + BulasikMakineleri.Length + i].Yazdır()}-*-*-*-");
+                                Console.WriteLine("Almak İstediğiniz Ürün");
+                                Console.WriteLine(Buzdolaplari[i].Yazdir());
+                                Console.WriteLine("Onaylıyor Musunuz? E/H");
+                                string onay = Console.ReadLine();
+                                if (onay.ToUpper() == "E")
+                                {
+                                    Console.WriteLine("Alışverişiniz İçin Teşekkür Ederiz");
+                                    Console.WriteLine("Ürünün Fiyatı = " + Buzdolaplari[i].Fiyat + " TL");
+                                    toplam = Buzdolaplari[i].Fiyat + toplam;
+                                    Console.WriteLine("Toplam Alışveriş = " + toplam);
 
 
 
+                                }
+                                devammi = "h";
                             }
                         }
                     }
+
                 }
+
+
             }
+
 
         }
         public double GetToplam()
